@@ -1,4 +1,6 @@
-FROM tomcat:8.0.20-jre8
-MAINTAINER Amit <amit5555.kr@gmail.com>
+FROM openjdk:11
+MAINTAINER 'Amit'
+COPY target/jenkins-test.jar /usr/app/
+WORKDIR /usr/app/
 EXPOSE 8080
-COPY target/jenkins-test.jar /usr/local/tomcat/webapps/jenkins-test.jar
+ENTRYPOINT ["java", "-jar", "/jenkins-test.jar"]
