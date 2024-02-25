@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11-jre-hotspot
+FROM adoptopenjdk:17-jre-hotspot
 WORKDIR /app
 EXPOSE 8080
 COPY target/jenkins-test.jar /usr/local/tomcat/webapps/jenkins-test.jar
