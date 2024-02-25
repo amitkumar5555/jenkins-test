@@ -1,6 +1,4 @@
-FROM openjdk:11
-MAINTAINER 'Amit'
-COPY target/jenkins-test.jar /usr/app/
-WORKDIR /usr/app/
+FROM openjdk:8
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/jenkins-test.jar"]
+ADD target/jenkins-test.jar jenkins-test.jar
+ENTRYPOINT ["java","-jar","/jenkins-test.jar"]
