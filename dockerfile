@@ -1,4 +1,5 @@
-FROM tomcat:8.0.20-jre8
-MAINTAINER Amit <amit5555.kr@gmail.com>
+FROM adoptopenjdk:11-jre-hotspot
+WORKDIR /app
 EXPOSE 8080
 COPY target/jenkins-test.jar /usr/local/tomcat/webapps/jenkins-test.jar
+CMD ["java", "-jar", "jenkins-test.jar"]
